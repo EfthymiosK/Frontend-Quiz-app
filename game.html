@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="game.css" />
+    <title>Frontend Mentor | Frontend quiz app</title>
+  </head>
+  <body>
+    <section class="header">
+      <div class="category-container">
+        <img src="./assets/images/icon-accessibility.svg" class="categoryImage" alt="" />
+        <p class="category-p">Accessibility</p>
+      </div>
+      <div class="toggle-btn">
+        <div class="svg-sun-container"></div>
+        <div class="theme-btn">
+          <div class="circle"></div>
+        </div>
+        <div class="svg-moon-container"></div>
+      </div>
+    </section>
+    <section class="main">
+      <div class="question-container">
+        <p class="question-number">question 1 of 10</p>
+        <p class="question-p">
+          Which of these color contrast ratios defines the minimum WCAG 2.1
+          Level AA requirement for normal text?
+        </p>
+        <div class="progress-bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="answers-container">
+        <div class="answer" data-number="0">
+          <div class="answer-letter-container" data-container="0">
+            <p class="answer-letter" data-letter="0">A</p>
+          </div>
+          <div class="answer-p-container">
+            <p class="answer-p" >1</p><img class="answer-image" id="0" alt="">
+          </div>
+        </div>
+        <div class="answer" data-number="1">
+          <div class="answer-letter-container" data-container="1">
+            <p class="answer-letter" data-letter="1">B</p>
+          </div>
+          <div class="answer-p-container">
+            <p class="answer-p" >2</p><img class="answer-image" id="1" alt="">
+          </div>
+        </div>
+        <div class="answer" data-number="2">
+          <div class="answer-letter-container" data-container="2">
+            <p class="answer-letter" data-letter="2">C</p>
+          </div>
+          <div class="answer-p-container">
+            <p class="answer-p" >3</p><img class="answer-image" id="2" alt="">
+          </div>
+        </div>
+        <div class="answer" data-number="3">
+          <div class="answer-letter-container" data-container="3">
+            <p class="answer-letter" data-letter="3">D</p>
+          </div>
+          <div class="answer-p-container">
+            <p class="answer-p" >4</p><img class="answer-image" id="3" alt="">
+          </div>
+        </div>
+        <div class="submit-btn btn">Submit Answer</div>
+        <div class="next-question-btn btn none">Next Question</div>
+        <div class="error-message"><img src="./assets/images/icon-error.svg" alt="">Please select an answer</div>
+      </div>
+    </section>
+    <script src="./game.js"></script>
+  </body>
+</html>

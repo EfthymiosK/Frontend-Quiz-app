@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple:#A729F5;
+    --very-dark-blue:#313E51;
+    --dark-blue:#3B4D66;
+    --grey:#626C7F;
+    --cyan:#ABC1E1;
+    --very-light-grey:#F4F6FA;
+    --white:#ffffff;
+    --green:#26D782;
+    --red:#EE5454;
+
+    --bkg-mobile-light:url(./assets/images/pattern-background-mobile-light.svg);
+    --bkg-mobile-dark:url(./assets/images/pattern-background-mobile-dark.svg);
+    --bkg-tablet-light:url(./assets/images/pattern-background-tablet-light.svg);
+    --bkg-tablet-dark:url(./assets/images/pattern-background-tablet-dark.svg);
+    --bkg-desktop-light:url(./assets/images/pattern-background-desktop-light.svg);
+    --bkg-desktop-dark:url(./assets/images/pattern-background-desktop-dark.svg);
+}
+
+html {
+    font-family: "Rubik", serif;
+}
+
+body {
+    --text-color: var(--very-dark-blue);
+    --bkg-color: var(--very-light-grey);
+    --bkg-img: var(--bkg-mobile-light);
+  }
+  body.dark-theme {
+    --text-color: var(--white);
+    --bkg-color: var(--very-dark-blue);
+    --bkg-img: var(--bkg-mobile-dark);
+    .theme-btn {justify-content: end;}
+    .svg-sun-container {background-image: url(./assets/images/icon-sun-light.svg);}
+    .svg-moon-container {background-image: url(./assets/images/icon-moon-light.svg);}
+    .subject {background-color: var(--dark-blue);}
+  }
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+    background-image: var(--bkg-img);
+    background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: var(--white);
+        --bkg-color: var(--very-dark-blue);
+        --bkg-img: var(--bkg-mobile-dark);
+    }
+    body.light-theme {
+        --text-color: var(--very-dark-blue);
+        --bkg-color: var(--very-light-grey);
+        --bkg-img: var(--bkg-mobile-light);
+    }
+
+    
+  }
+   
+  @media (min-width: 598px) {
+    body {
+        
+        --bkg-img: var(--bkg-tablet-light);
+      }
+      body.dark-theme {
+        
+        --bkg-img: var(--bkg-tablet-dark);
+      }     
+    
+    body.light-theme {
+        --bkg-img: var(--bkg-tablet-light);
+    }
+  
+}
+  
+
+
+@media only screen and (min-width: 890px) {
+    body {
+        
+        --bkg-img: var(--bkg-desktop-light);
+      }
+      body.dark-theme {
+        
+        --bkg-img: var(--bkg-desktop-dark);
+      }     
+    
+    body.light-theme {
+        --bkg-img: var(--bkg-desktop-light);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 1.5rem;
+}
+
+@media only screen and (min-width: 598px) {
+    .header {
+        padding: 54px 4rem 2rem 4rem; 
+    }
+}
+
+@media only screen and (min-width: 1390px) {
+    .header {
+        padding: 97px 143px 99px 143px ;
+    }
+}
+
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.svg-sun-container {
+    background-image: url(./assets/images/icon-sun-dark.svg);
+    background-size: contain;
+    height: 14px;
+    width: 14px;
+}
+
+@media only screen and (min-width: 598px) {
+    .svg-sun-container {
+        height: 21px;
+        width: 21px;}
+}
+
+.theme-btn {
+    width: 32px;
+    height: 20px;
+    border-radius: 15px;
+    background-color: var(--purple);
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    /*justify-content: end;*/
+}
+
+@media only screen and (min-width: 598px) {
+    .theme-btn {
+        width: 48px;
+        height: 28px;
+        margin: 0 20px;
+        /*justify-content: end;*/
+    }
+}
+
+
+.circle {
+    height: 12px;
+    width: 12px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 598px) {
+    .circle {
+        height: 20px;
+        width: 20px;
+        background-color: var(--white);
+        border-radius: 50%;
+    }
+}
+
+
+.svg-moon-container {
+    background-image: url(./assets/images/icon-moon-dark.svg);
+    background-size: contain;
+    height: 14px;
+    width: 14px;
+}
+
+@media only screen and (min-width: 598px) {
+    .svg-moon-container {
+        height: 21px;
+        width: 21px;}
+}
+
+@media only screen and (min-width: 1390px) {
+    .main {
+        display: flex;
+        padding: 0 140px;
+        justify-content: space-between;
+    }
+}
+.text-container {
+    padding: 2rem 1.5rem 0 1.5rem;
+}
+
+@media only screen and (min-width: 598px) {
+    .text-container {
+        padding: 2rem 4rem 0 4rem;
+    }
+}
+
+@media only screen and (min-width: 1390px) {
+    .text-container {
+        padding: 0;
+        width: 565px;
+    }
+}
+
+#header-p {
+    font-size: 2.5rem;
+    font-weight: light;
+}
+
+@media only screen and (min-width: 598px) {
+    #header-p {
+        font-size: 4rem;
+    }
+}
+
+span {
+    font-weight: bold;
+}
+
+#small-p {
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+@media only screen and (min-width: 598px) {
+    #small-p {
+        margin-bottom: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1390px) {
+    #small-p {
+        margin-top: 3rem;
+    }
+}
+
+.subjects-container {
+    
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media only screen and (min-width: 598px) {
+    .subjects-container {
+        padding: 0 4rem;
+        gap: 24px;
+    }
+}
+
+@media only screen and (min-width: 1390px) {
+    .subjects-container{
+        padding: 0;
+        width: 35.25rem;
+    }
+}
+
+.subject {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+@media only screen and (min-width: 598px) {
+    .subject {
+        height: 80px;
+        border-radius: 20px;
+        
+    }
+}
+
+.img-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 12px;
+}
+
+.html {
+    background-color: #FFF1E9;
+
+}
+
+.css {
+    background-color: #E0FDEF;
+}
+
+.js {
+    background-color: #EBF0FF;
+}
+
+.accessibility {
+    background-color: #F6E7FF;
+}
+
+@media only screen and (min-width: 598px) {
+    
+}
+
+.subject > p {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+@media only screen and (min-width: 598px) {
+    .subject > p {
+        font-size: 1.75rem;
+    }
+}

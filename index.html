@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="app.css">
+  <title>Frontend Mentor | Frontend quiz app</title>
+</head>
+<body>
+<section class="header">
+  <div class="toggle-btn">
+    <div class="svg-sun-container"></div>
+    <div class="theme-btn">
+      <div class="circle"></div>
+    </div>
+    <div class="svg-moon-container"></div>
+  </div>
+</section>
+<section class="main">
+  <div class="text-container">
+    <p id="header-p">Welcome to the <span>Frontend Quiz!</span></p>
+    <p id="small-p">Pick a subject to get started.</p>
+  </div>
+  <div class="subjects-container">
+    <div class="subject" data-subject="0">
+      <div class="img-container html"><img src="./assets/images/icon-html.svg" alt=""></div>
+      <p>HTML</p>
+    </div>
+    <div id="subject" class="subject" data-subject="1">
+      <div class="img-container css"><img src="./assets/images/icon-css.svg" alt=""></div>
+      <p>CSS</p>
+    </div>
+    <div class="subject" data-subject="2">
+      <div class="img-container js"><img src="./assets/images/icon-js.svg" alt=""></div>
+      <p>JavaScript</p>
+    </div>
+    <div class="subject" data-subject="3">
+      <div class="img-container accessibility"><img src="./assets/images/icon-accessibility.svg" alt=""></div>
+      <p>Accessibility</p>
+    </div>
+  </div>
+</section>
+<script src="./index.js"></script>
+</body>
+</html>
