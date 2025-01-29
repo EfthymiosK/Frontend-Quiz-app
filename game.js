@@ -1,5 +1,6 @@
 const CategoryIcon = document.querySelector(".categoryImage");
 const category = document.querySelector(".category-p");
+const iconContainer = document.querySelector(".img-container");
 const numberOfQuestion = document.querySelector(".question-number");
 const question = document.querySelector(".question-p");
 const progressBar = document.querySelector(".bar");
@@ -13,6 +14,8 @@ const answerLetters = document.querySelectorAll(".answer-letter");
 const answerImages = document.querySelectorAll(".answer-image");
 const toggleBtn = document.querySelector(".toggle-btn");
 
+
+//create dark-mode
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 const currentTheme = localStorage.getItem("theme");
@@ -38,7 +41,7 @@ toggleBtn.addEventListener("click", function () {
 });
 
 
-
+// fetch data
 let data = [];
 fetch("data.json")
   .then(res => {
@@ -62,6 +65,21 @@ function startGame() {
     CategoryIcon.src = data["quizzes"][localStorage.getItem("subject")]["icon"];
     category.innerText = data["quizzes"][localStorage.getItem("subject")]["title"];
 
+    switch (localStorage.getItem("subject")) {
+      case "0":
+        iconContainer.style.backgroundColor = "#FFF1E9";
+        break;
+      case "1":
+        iconContainer.style.backgroundColor = "#E0FDEF";
+        break;
+      case "2":
+        iconContainer.style.backgroundColor = "#EBF0FF";
+        break;
+      case "3":
+        iconContainer.style.backgroundColor = "#F6E7FF";
+        break;
+      }
+
     questionCounter = 1;
     score = 0;
     
@@ -69,7 +87,7 @@ function startGame() {
     //set available questions
     GetQuestion();
 
-// submit button function
+// submit button
 submitBtn.addEventListener("click", ()=> {
   if (!chosenAnswer) {
     errorMessage.style.display = "flex";
@@ -77,7 +95,7 @@ submitBtn.addEventListener("click", ()=> {
 
   else {
     
-    //errorMessage.style.display = "none";
+    
     console.log("question counter:"+questionCounter)
   
   submitBtn.style.display = "none";
@@ -183,9 +201,10 @@ function GetQuestion () {
     console.log("chose answer is :" + chosenAnswer);
     //disable not chosen choices
     answersContainer.forEach(answer => {
-      if (answer.dataset["number"]!=chosenAnswer) {
+      //if (answer.dataset["number"]!=chosenAnswer) {
         answer.setAttribute("disabled", true)
-      }})
+      //}
+    })
 })
 })
 
